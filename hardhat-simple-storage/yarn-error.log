@@ -1,0 +1,33 @@
+Arguments: 
+  /home/leksyking7/.nvm/versions/node/v18.14.2/bin/node /home/leksyking7/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add -D hardhat
+
+PATH: 
+  /home/leksyking7/.cargo/bin:/home/leksyking7/.nvm/versions/node/v18.14.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04LTS_2004.4.5.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/MongoDB/Server/5.0/bin:/mnt/c/Program Files/MySQL/MySQL Server 8.0/bin:/mnt/c/Program Files/Amazon/AWSCLIV2/:/mnt/c/Program Files/7-Zip:/mnt/c/Program Files/sqlite-tools-win32-x86-3380200:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Go/bin:/mnt/c/Users/LEKSYKING/AppData/Roaming/nvm:/mnt/c/Program Files/nodejs:/mnt/c/Program Files/heroku/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/HashiCorp/Vagrant/bin:/mnt/c/Users/LEKSYKING/AppData/Local/Programs/Python/Python39/Scripts/:/mnt/c/Users/LEKSYKING/AppData/Local/Programs/Python/Python39/:/mnt/c/Users/LEKSYKING/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/LEKSYKING/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/LEKSYKING/AppData/Roaming/npm:/mnt/c/Users/LEKSYKING/Downloads/flutter_windows_2.0.4-stable/flutter/bin:/mnt/c/Users/LEKSYKING/AppData/Local/Programs/Hyper/resources/bin:/mnt/c/ProgramData/chocolatey/lib/mingw/tools/install/mingw64/bin:/mnt/c/Users/LEKSYKING/go/bin:/snap/bin:/usr/local/go/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.14.2
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:107:26)
+
+npm manifest: 
+  {
+    "name": "hardhat-simple-storage",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Leksyking",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
