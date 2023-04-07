@@ -1,31 +1,42 @@
-const { ethers } = require("ethers");
-const fs = require("fs");
+const { ethers } = require("ethers")
+const fs = require("fs")
+require("dotenv").config()
 
 async function main() {
-  // console.log("hi!");
-  // let variable = 5;
-  // console.log(variable);
-  // http://127.0.0.1:7545
-  const provider = new ethers.providers.JsonRpcProvider(
-    "http://127.0.0.1:7545"
-  );
-  const wallet = new ethers.Wallet(
-    "0xb492bd656a683ebc78e2f18a42098d853f00255412ca3d2f0e4efbe69d76d086",
-    provider
-  );
+    const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL)
+    const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider)
 
-  const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8");
-  const binary = fs.readFileSync(
-    "./SimpleStorage_sol_SimpleStorage.bin",
-    "utf8"
-  );
+    //Encryption of Private key wit h real funds
+    // const encryptedJson = fs.readFileSync("./.encryptedKey.json", "utf8");
+    // let wallet = new ethers.Wallet.fromEncryptedJsonSync(
+    //   encryptedJson,
+    //   process.env.PRIVATE_KEY_PASSWORD
+    // );
+    // wallet = await wallet.connect(provider);
 
-  const contractFactory = new ethers.Contract(abi, binary, wallet);
+    const abi = fs.readFileSync("./SimpleStorage_sol_SimpleStorage.abi", "utf8")
+    const binary = fs.readFileSync(
+        "./SimpleStorage_sol_SimpleStorage.bin",
+        "utf8"
+    )
+
+    const contractFactory = new ethers.ContractFactory(abi, binary, wallet)
+    console.log("Deploying, please wait...")
+    const contract = await contractFactory.deploy()
+    await contract.deployTransaction.wait(1)
+    console.log(`Contract address: ${contract.address}`)
+
+    const currentFavoriteNumber = await contract.retrieve()
+    console.log(`Current favorite number: ${currentFavoriteNumber.toString()}`)
+    const transactionResponse = await contract.store("7")
+    await transactionResponse.wait(1)
+    const updatedFavoriteNumber = await contract.retrieve()
+    console.log(`Updated favorite number: ${updatedFavoriteNumber.toString()}`)
 }
 
 main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.log(error);
-    process.exit(1);
-  });
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.log(error)
+        process.exit(1)
+    })
