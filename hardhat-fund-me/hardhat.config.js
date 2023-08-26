@@ -1,16 +1,16 @@
-require("dotenv").config()
-require("@nomicfoundation/hardhat-toolbox")
-require("hardhat-gas-reporter")
-require("solidity-coverage")
-require("@nomiclabs/hardhat-etherscan")
-require("hardhat-deploy")
+require("dotenv").config();
+require("@nomicfoundation/hardhat-toolbox");
+require("hardhat-gas-reporter");
+require("solidity-coverage");
+require("@nomiclabs/hardhat-etherscan");
+require("hardhat-deploy");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 
-const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "https://eth-goerli"
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xkey"
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "key"
-const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "key"
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "https://eth-goerli";
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "0xkey";
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "key";
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "key";
 
 module.exports = {
     // solidity: "0.8.8",
@@ -41,4 +41,4 @@ module.exports = {
             blockConfirmations: 6,
         },
     },
-}
+};
